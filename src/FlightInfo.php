@@ -23,4 +23,15 @@ class FlightInfo
 
         return $flightDate;
     }
+
+    public function getFlightSite($short = false)
+    {
+        $flightSite = $this->headerLines["HPSIT"];
+
+        if($short){
+          $flightSite = substr($flightSite, 11);
+        }
+
+        return $flightSite;
+    }
 }
